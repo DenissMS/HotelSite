@@ -1,0 +1,7 @@
+C:\Users\Kerat\Documents\GitHub\HotelSite\HotelSiteApplication\bin\HotelSiteApplication.dll
+C:\Users\Kerat\Documents\GitHub\HotelSite\HotelSiteApplication\bin\HotelSiteApplication.pdb
+C:\Users\Kerat\Documents\GitHub\HotelSite\HotelSiteApplication\bin\System.Data.SqlServerCe.dll
+C:\Users\Kerat\Documents\GitHub\HotelSite\HotelSiteApplication\obj\Debug\HotelSiteApplication.dll
+C:\Users\Kerat\Documents\GitHub\HotelSite\HotelSiteApplication\obj\Debug\HotelSiteApplication.pdb
+C:\Users\Kerat\Documents\GitHub\HotelSite\HotelSiteApplication\bin\App_Data\Languages.xml
+C:\Users\Kerat\Documents\GitHub\HotelSite\HotelSiteApplication\obj\Debug\HotelSiteApplication.csprojResolveAssemblyReference.cache

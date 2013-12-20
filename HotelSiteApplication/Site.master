@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="SiteMaster" Codebehind="Site.master.cs" %>
+<%@ Import Namespace="Resources" %>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html dir="ltr" lang="en-US" class="ie6"> <![endif]-->
+<!--[if IE 7]>    <html dir="ltr" lang="en-US" class="ie7"> <![endif]-->
+<!--[if IE 8]>    <html dir="ltr" lang="en-US" class="ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html dir="ltr"> <!--<![endif]-->
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+
+    <title><%=Resource.Title %></title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="Content/superfish.css" type="text/css"  media="all"  />
+    <link rel="stylesheet" href="Content/prettyPhoto.css" type="text/css" media="all" />
+    <link type="text/css" href="Content/jqueryui/jquery.ui.datepicker.css" rel="stylesheet" />
+    <%--<link type="text/css" href="Content/bromo.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="Content/style.css" type="text/css"  media="all"  />
+    <link id="colour_css" rel="stylesheet" href="Content/cream-red.css" type="text/css"  media="all"  />
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+    
+    <!--Favicon-->
+    <link rel="shortcut icon" href="favicon.html" type="image/x-icon" />
+    	<!--JavaScript-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
+
+    <!--[if (gte IE 6)&(lte IE 8)]>
+        <script type="text/javascript" src="js/selectivizr-min.js"> </script>
+    <![endif]-->
+
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+
+<body>
+    <form runat="server">
+        <div id="body">
+            <div class="background-wrapper">
+                <div class="content-wrapper">
+                    <div class="content-body">
+                        <div id="header-google-map" style="display: none;">
+                            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"> </script>
+                            <script type="text/javascript" src="js/gmap.js"> </script>
+                            <div id="map_canvas" style="height: 300px; width: 100%;"></div>
+                        </div>
+                        <div class="top-bar clearfix">
+                            <ul class="social-icons fl">
+                                <li><a href="#"><span id="twitter_icon"></span></a></li>
+                                <li><a href="#"><span id="facebook_icon"></span></a></li>
+                                <li><a href="#"><span id="googleplus_icon"></span></a></li>
+                                <li><a href="#"><span id="rss_icon"></span></a></li>
+                            </ul>
+                            <div class="gmap-btn-wrapper">
+                                <a href="#" class="gmap-btn"></a>
+                                <div class="gmap-curve"></div>
+                            </div>
+                            
+                            <div class="top-menu-wrapper fr clearfix">
+                                <a href="accommodation.aspx" class="button1 fl"><%=Resource.BookNow %></a>
+                                <ul class="top-menu fr">
+                                    <div id="cc" runat="server"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="title-wrapper">
+                            <h1><div class="title-dec-left"></div>
+                                <a href="Default.aspx"><%=Resource.NiceHotel %></a><div class="title-dec-right"></div>
+                            </h1>
+                        </div>
+                        <div id="navigation" class="clearfix">
+                            <ul id="main-menu" class="fl clearfix">
+                                <li class="current-menu-item"><a href="Default.aspx"><%=TopMenu.Home %><span><%=TopMenu.HomeDesc %></span></a></li>
+                                <li><a href="accommodation.aspx"><%=TopMenu.Accommodation %><span><%=TopMenu.AccommodationDesc %></span></a>
+                                    <ul>
+                                        <li><a href="accommodation-single.aspx"><%=TopMenu.StandardRoom %></a></li>
+                                        <li><a href="accommodation-single.aspx"><%=TopMenu.JuniorSuiteRoom %></a></li>
+                                        <li><a href="accommodation-single.aspx"><%=TopMenu.LuxuryRoom %></a>
+                                    </ul>
+                                </li>
+                                <li><a href="typography.aspx"><%=TopMenu.Facilities %><span><%=TopMenu.FacilitiesDesc %></span></a>
+                                    <ul>
+                                        <li><a href="gallery.aspx"><%=TopMenu.PhotoGallery %></a>
+                                        <li><a href="typography.aspx"><%=TopMenu.Typography %></a>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"><%=TopMenu.Contacts %><span><%=TopMenu.ContactsDesc %></span></a></li>
+                            </ul>
+
+                            <ul class="main-menu-contact-info fr">
+                                <li class="info-phone"><%=Resource.InfoPhone %></li>
+                                <li class="info-email"><%=Resource.InfoEmail %></li>
+                            </ul>
+					
+                            <div class="corner-left"></div>
+                            <div class="corner-right"></div>
+                        </div>
+				
+                        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+                        <section class="content-wrapper main-content clear-fix">
+                            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+                        </section>
+                        <div id="footer" class="clearfix">
+                            <div class="two-forths">
+                                <div class="widget">
+                                    <div class="widget-title clearfix">
+                                        <h5><%=Resource.NiceHotel %></h5>
+                                    </div>
+                                    
+                                    <p>
+                                        <%=Resource.NiceHotelDesc %></p>
+                                </div>
+                            </div>
+                            <div class="one-forth">
+                                <div class="widget">
+                                    <div class="widget-title clearfix">
+                                        <h5><%=Resource.SiteMap %></h5>
+                                    </div>
+							
+                                    <ul>
+                                        <li><a href="Accommodation.aspx"><%=TopMenu.Accommodation %></a></li>
+                                        <li><a href="Typography.aspx"><%=TopMenu.Facilities %></a></li>
+                                        <li><a href="Contact.aspx"><%=TopMenu.Contacts %></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+				
+                        </div>
+                        <div id="footer-bottom" class="clearfix">
+                            <p class="fl">&copy; <%: DateTime.Now.Year %>- Михальченко Денис</p>
+                            <ul class="footer-menu fr">
+                                <li><a href="Default.aspx"><%=TopMenu.Home %></a><span>/</span></li>
+                                <li><a href="Accommodation.aspx"><%=TopMenu.Accommodation %></a><span>/</span></li>
+                                <li><a href="Contact.aspx"><%=TopMenu.Contacts %></a><span>/</span></li>
+                            </ul>
+                        </div>
+                    </div>	
+                </div>		
+            </div>     
+        </div>
+    </form>
+</body>
